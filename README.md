@@ -12,23 +12,27 @@ projeto-estatistica/
 │   ├── transfers.csv
 │   ├── clubs.csv
 │   ├── games.csv
-│   └── club_games.csv
-└── projeto.ipynb
+│   ├── club_games.csv
+│   └── competitions.csv
+└── Transferencias_futebol.ipynb
 ```
 
-As quatro tabelas foram extraídas do snapshot do dataset baixado em 15/09/2026.
-As demais tabelas do pacote original não foram incluídas neste primeiro commit.
+As cinco tabelas foram extraídas do snapshot do dataset baixado em 15/09/2026.
+`competitions.csv` foi incluída porque o notebook usa a tabela para confirmar os
+IDs das cinco grandes ligas antes de filtrar os jogos. As demais tabelas do pacote
+original não foram incluídas nesta versão inicial.
 
 ## Como começar
 
-Abra `projeto.ipynb` na raiz do projeto e execute as células em ordem. O notebook
-carrega as tabelas, verifica dimensões e valores ausentes e cria resumos iniciais
-de desempenho dos clubes e de transferências.
+Abra `Transferencias_futebol.ipynb` na raiz do projeto e execute as células em
+ordem. O notebook carrega o snapshot local (e usa o Kaggle como fallback), valida
+dimensões, valores ausentes, duplicatas e tipos, monta a base clube × temporada e
+responde às três perguntas estatísticas do projeto.
 
-Para executar localmente, instale Python 3 com `pandas` e `numpy` e abra o notebook
+Para executar localmente, instale Python 3 com as dependências e abra o notebook
 com Jupyter:
 
 ```bash
-pip install pandas numpy jupyter
-jupyter notebook projeto.ipynb
+pip install pandas numpy scipy matplotlib kagglehub jupyter
+jupyter notebook Transferencias_futebol.ipynb
 ```
